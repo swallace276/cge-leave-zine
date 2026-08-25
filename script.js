@@ -15,12 +15,12 @@ const nodes = {
     options: [
       {
         text: "Health",
-        description: "- you or a dependent need care",
+        description: "For health-related reasons.",
         next: "health"
       },
       {
         text: "Other",
-        description: "- non-health-related reasons",
+        description: "For non-health-related reasons.",
         next: "other"
       }
     ]
@@ -108,40 +108,73 @@ const nodes = {
     ]
   },
 
+
+  // INFORMATION / TERMINAL NODES
+
   "flex-time": {
     title: "Flex time",
     subtitle: "Add your information about flex time here.",
-    info: true
+    links: [
+      {
+        text: "Learn more about flex time",
+        url: "https://example.com"
+      }
+    ]
   },
 
   "sick-hours": {
     title: "Sick hours",
-    subtitle: "See article 30 in the CBA",
-    info: true
+    subtitle: "Add your information about sick hours here.",
+    links: [
+      {
+        text: "Learn more about sick hours",
+        url: "https://example.com"
+      }
+    ]
   },
 
   "donated-sick": {
     title: "Donated sick hours",
     subtitle: "Add your information about donated sick hours here.",
-    info: true
+    links: [
+      {
+        text: "Learn more about donated sick hours",
+        url: "https://example.com"
+      }
+    ]
   },
 
   plo: {
     title: "PLO",
     subtitle: "Add your information about PLO here.",
-    info: true
+    links: [
+      {
+        text: "Learn more about PLO",
+        url: "https://example.com"
+      }
+    ]
   },
 
   vacation: {
     title: "Vacation days",
     subtitle: "Add your information about vacation days here.",
-    info: true
+    links: [
+      {
+        text: "Learn more about vacation days",
+        url: "https://example.com"
+      }
+    ]
   },
 
   extended: {
     title: "Extended leave",
     subtitle: "Add your information about extended leave here.",
-    info: true
+    links: [
+      {
+        text: "Learn more about extended leave",
+        url: "https://example.com"
+      }
+    ]
   }
 };
 
@@ -157,12 +190,16 @@ function renderNode() {
 
   app.innerHTML = "";
 
-  // Title
+
+  // TITLE
+
   const title = document.createElement("h1");
   title.textContent = node.title;
   app.appendChild(title);
 
-  // Subtitle
+
+  // SUBTITLE
+
   if (node.subtitle) {
     const subtitle = document.createElement("p");
     subtitle.textContent = node.subtitle;
@@ -170,7 +207,9 @@ function renderNode() {
     app.appendChild(subtitle);
   }
 
-  // Options
+
+  // OPTIONS
+
   if (node.options) {
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "options";
@@ -198,34 +237,59 @@ function renderNode() {
     app.appendChild(optionsContainer);
   }
 
-  // Navigation
-  const navigation = document.createElement("div");
-  navigation.className = "navigation";
 
-  if (history.length > 0) {
-    const backButton = document.createElement("button");
-    backButton.textContent = "← Go back";
+  // LINKS
 
-    backButton.addEventListener("click", () => {
-      currentNode = history.pop();
+  if (node.links) {
+    const linksContainer = document.createElement("div");
+    linksContainer.className = "links";
+
+    node.links.forEach(link => {
+      const anchor = document.createElement("a");
+
+      anchor.textContent = link.text;
+      anchor.href = link.url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+
+      linksContainer.appendChild(anchor);
+    });
+
+    app.appendChild(linksContainer);
+  }
+
+
+  // NAVIGATION
+
+  if (currentNode !== "start") {
+    const navigation = document.createElement("div");
+    navigation.className = "navigation";
+
+    if (history.length > 0) {
+      const backButton = document.createElement("button");
+      backButton.textContent = "← Go back";
+
+      backButton.addEventListener("click", () => {
+        currentNode = history.pop();
+        renderNode();
+      });
+
+      navigation.appendChild(backButton);
+    }
+
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "↻ Start over";
+
+    restartButton.addEventListener("click", () => {
+      currentNode = "start";
+      history = [];
       renderNode();
     });
 
-    navigation.appendChild(backButton);
+    navigation.appendChild(restartButton);
+
+    app.appendChild(navigation);
   }
-
-  const restartButton = document.createElement("button");
-  restartButton.textContent = "↻ Start over";
-
-  restartButton.addEventListener("click", () => {
-    currentNode = "start";
-    history = [];
-    renderNode();
-  });
-
-  navigation.appendChild(restartButton);
-
-  app.appendChild(navigation);
 }
 
 
