@@ -131,7 +131,7 @@ const nodes = {
         url: "https://www.cge6069.org/members/cba/#A30"
       },
       {
-        text: "Definition of Family Member"
+        text: "Definition of Family Member",
         url: "https://www.cge6069.org/members/cba/#A30:~:text=Definition%20of%20Family%20Member"
       },
       
