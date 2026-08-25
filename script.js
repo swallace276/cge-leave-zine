@@ -1,7 +1,7 @@
 const nodes = {
   start: {
     title: "Need time off?",
-    subtitle: "Information about taking time away from work.",
+    subtitle: "A zine for figuring out how to take leave as a CGE member, GTA, or GRA at Oregon State University",
     options: [
       {
         text: "Find out more →",
@@ -15,12 +15,12 @@ const nodes = {
     options: [
       {
         text: "Health",
-        description: "For health-related reasons.",
+        description: "- you or a dependent need care",
         next: "health"
       },
       {
         text: "Other",
-        description: "For non-health-related reasons.",
+        description: "- non-health-related reasons",
         next: "other"
       }
     ]
@@ -116,7 +116,7 @@ const nodes = {
 
   "sick-hours": {
     title: "Sick hours",
-    subtitle: "Add your information about sick hours here.",
+    subtitle: "See article 30 in the CBA",
     info: true
   },
 
