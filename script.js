@@ -80,7 +80,7 @@ const nodes = {
         next: "donated-sick"
       },
       {
-        text: "PLO",
+        text: "Protected Leave",
         next: "plo"
       }
     ]
@@ -113,66 +113,71 @@ const nodes = {
 
   "flex-time": {
     title: "Flex time",
-    subtitle: "Add your information about flex time here.",
+    subtitle: "This is an <i> informal </i> option for taking time off your GTA or GRA work, in which you and your supervisor agree that you will effectively make up the hours you missed later. This tends to be a popular option but is not your only option for time off when you're sick!",
     links: [
       {
-        text: "Learn more about flex time",
-        url: "https://example.com"
+        text: "Here’s the actual text from the CBA",
+        url: "https://www.cge6069.org/members/cba/#A30:~:text=(b)%20Flexible%20Schedules."
       }
     ]
   },
 
   "sick-hours": {
     title: "Sick hours",
-    subtitle: "Add your information about sick hours here.",
+    subtitle: "These are hours you can take off if you or a family member (broadly defined, see below) are experiencing physical or mental health symptoms or have a doctor's appointment. Think of this as the typical 'I have a cold and I can’t come to work' scenario. You can accrue up to 50 per year and up to 100 can roll over into the next year. Many employees have lots of sick hours they've never taken. For more thorough information, check out Article 30 in the CBA.",
     links: [
       {
-        text: "Learn more about sick hours",
-        url: "https://example.com"
-      }
+        text: "CBA Article 30",
+        url: "https://www.cge6069.org/members/cba/#A30"
+      },
+      {
+        text: "Definition of Family Member"
+        url: "https://www.cge6069.org/members/cba/#A30:~:text=Definition%20of%20Family%20Member"
+      },
+      
     ]
   },
 
   "donated-sick": {
     title: "Donated sick hours",
-    subtitle: "Add your information about donated sick hours here.",
+    subtitle: "If you have exceeded your accrued sick hours, you can also receive up to 50 sick hours donated from another employee. You can also donate your unused sick leave. The CBA is your best resource for information about this, but note that there are some unresolved ambiguities in the text of the CBA. Feel free to ask CGE if you need help navigating donated sick leave.",
     links: [
       {
         text: "Learn more about donated sick hours",
-        url: "https://example.com"
+        url: "https://www.cge6069.org/members/cba/#A30:~:text=Section%205%20%E2%80%93-,Leave%20Donation,-(a)%20Graduate%20Employees"
       }
     ]
   },
 
   plo: {
-    title: "PLO",
-    subtitle: "Add your information about PLO here.",
+    title: "Protected Leave",
+    subtitle: "Including Paid Leave Oregon",
     links: [
       {
-        text: "Learn more about PLO",
-        url: "https://example.com"
+        text: "A questionnaire on OSU HR's website",
+        url: "https://hr.oregonstate.edu/benefits/protected-leave-guidance-employees"
       }
     ]
   },
 
   vacation: {
     title: "Vacation days",
-    subtitle: "Add your information about vacation days here.",
+    subtitle: "We get around 15 days a year totally 'off'. You don't typically record these anywhere, but scheduling these days are usually informally agreed upon between you and your supervisor.",
     links: [
       {
-        text: "Learn more about vacation days",
-        url: "https://example.com"
+        text: "Here's what it says in the CBA",
+        url: "https://www.cge6069.org/members/cba/#A30:~:text=and%20their%20supervisor.-,Section%206%20%E2%80%93%20Leave,-Supervisors%20must%20make"
       }
     ]
   },
 
   extended: {
     title: "Extended leave",
-    subtitle: "Add your information about extended leave here.",
+    subtitle: "Unpaid leave, if you need to take a break from work and want to be able to come back and have protections around retaliations but don't need to get paid",
     links: [
       {
-        text: "Learn more about extended leave",
-        url: "https://example.com"
+        text: "Here's what the CBA says",
+        url: "https://www.cge6069.org/members/cba/#Article%2028:~:text=ARTICLE%2027%20%E2%80%93%20STATUTORY%20COMPLIANCE"
       }
     ]
   }
