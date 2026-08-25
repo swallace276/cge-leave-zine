@@ -113,7 +113,7 @@ const nodes = {
 
   "flex-time": {
     title: "Flex time",
-    subtitle: "This is an <i> informal </i> option for taking time off your GTA or GRA work, in which you and your supervisor agree that you will effectively make up the hours you missed later. This tends to be a popular option but is not your only option for time off when you're sick!",
+    subtitle: "This is an informal option for taking time off your GTA or GRA work, in which you and your supervisor agree that you will effectively make up the hours you missed later. This tends to be a popular option but is not your only option for time off when you're sick!",
     links: [
       {
         text: "Here’s the actual text from the CBA",
