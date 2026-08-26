@@ -1,7 +1,9 @@
 const nodes = {
   start: {
-    label: "START HERE",
+    type: "cover",
+    
     title: "Need time off?",
+    
     subtitle: 'A choose-your-own-adventure "zine" for navigating what kind of leave you can take as a Coalition of Graduate Employees (CGE, or "union") member, GTA, or GRA at Oregon State University.',
 
     disclaimer: `
@@ -23,17 +25,47 @@ const nodes = {
   reason: {
     label: "QUESTION 01",
     title: "Reason for leave?",
-    subtitle: "Your options vary based on whether you need time off for health-related reasons or something else. Health can refer to mental health or physical health, and can include well care or doctor's visits. You can also take time off for the care of family members.",
+    subtitle: "What kind of leave are you looking for?",
 
+    body: `
+      <p>
+        Your options vary based on why you need time away from your work.
+      </p>
+  
+      <p>
+        <a
+          href="https://www.cge6069.org/members/cba/#A30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Health-related leave
+        </a>
+        can include more than being physically sick. Under the CBA, sick leave
+        may apply to physical or mental illness, injury, or health conditions;
+        medical diagnosis, care, or treatment; and preventative care.
+      </p>
+  
+      <p>
+        Some health-related leave can also be used to care for a
+        <a
+          href="https://www.cge6069.org/members/cba/#A30:~:text=Definition%20of%20Family%20Member"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          qualifying family member
+        </a>.
+      </p>
+    `,
+  
     options: [
       {
-        text: "My health",
-        description: "Physical or mental health.",
+        text: "Health",
+        description: "Includes mental or physical health, preventative care, or care of family members",
         next: "health"
       },
       {
         text: "Something else",
-        description: "Family, caregiving, personal circumstances, or another reason.",
+        description: "Personal circumstances, vacation, or another reason.",
         next: "other"
       }
     ]
@@ -387,6 +419,12 @@ function renderNode() {
   const node = nodes[currentNode];
 
   app.innerHTML = "";
+
+  if (node.type === "cover") {
+    app.classList.add("cover-page");
+  } else {
+    app.classList.remove("cover-page");
+  }
 
 
   // PAGE CONTAINER
