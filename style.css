@@ -34,6 +34,50 @@ main {
   min-height: 70vh;
 }
 
+/* --------------------------------------------------
+   COVER PAGE
+-------------------------------------------------- */
+
+.cover-page {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover-page h1 {
+  max-width: 9ch;
+
+  font-size: clamp(4.5rem, 14vw, 8rem);
+  line-height: 0.82;
+
+  margin-bottom: 1.5rem;
+
+  letter-spacing: -0.06em;
+}
+
+.cover-page .subtitle {
+  max-width: 48ch;
+
+  font-size: 1.25rem;
+
+  margin-bottom: 3rem;
+}
+
+.cover-page .options {
+  max-width: 360px;
+}
+
+.cover-page .option-button {
+  align-items: center;
+
+  text-align: center;
+}
+
+.cover-page .option-title {
+  width: 100%;
+}
 
 /* --------------------------------------------------
    LABELS
