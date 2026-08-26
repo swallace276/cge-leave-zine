@@ -221,14 +221,21 @@ function renderNode() {
 
     node.options.forEach(option => {
       const button = document.createElement("button");
+      button.className = "option-button";
 
-      let buttonText = option.text;
+      const optionTitle = document.createElement("span");
+      optionTitle.className = "option-title";
+      optionTitle.textContent = option.text;
+
+      button.appendChild(optionTitle);
 
       if (option.description) {
-        buttonText += "\n" + option.description;
-      }
+        const optionDescription = document.createElement("span");
+        optionDescription.className = "option-description";
+        optionDescription.textContent = option.description;
 
-      button.textContent = buttonText;
+        button.appendChild(optionDescription);
+      }
 
       button.addEventListener("click", () => {
         history.push(currentNode);
