@@ -5,10 +5,10 @@ const nodes = {
     subtitle: 'A choose-your-own-adventure "zine" for navigating what kind of leave you can take as a Coalition of Graduate Employees (CGE, or "union") member, GTA, or GRA at Oregon State University.',
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Policies and agreements can change, so please consult
-      official resources and the people who can help you navigate your specific
-      situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `,
 
     options: [
