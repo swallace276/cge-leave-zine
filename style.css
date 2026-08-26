@@ -2,10 +2,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --paper: #f6f1e8;
+  --ink: #1f1b18;
+  --orange: #d3832b;
+  --light-orange: #f3dfc8;
+  --dark-orange: #9b5515;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f2eb;
-  color: #222;
+  background: var(--paper);
+  color: var(--ink);
   margin: 0;
   min-height: 100vh;
 }
@@ -18,120 +26,174 @@ main {
 
 #app {
   min-height: 70vh;
-  animation: fadeIn 0.3s ease-out;
 }
 
+
+/* HEADINGS */
+
 h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  line-height: 0.95;
-  margin: 0 0 0.5rem;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 0.9;
+  margin: 0 0 1rem;
   letter-spacing: -0.04em;
 }
+
+
+/* SUBTITLE */
 
 .subtitle {
   font-size: 1.2rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   max-width: 55ch;
 }
+
+
+/* OPTION BUTTONS */
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
-button {
-  font: inherit;
-  font-size: 1.1rem;
-  padding: 18px;
-  border: 2px solid #222;
-  border-radius: 4px;
-  background: #D3832B;
-  color: #222;
-  cursor: pointer;
+.option-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 20px;
+
+  font-family: inherit;
   text-align: left;
+
+  background: var(--light-orange);
+  color: var(--ink);
+
+  border: 3px solid var(--ink);
+  border-radius: 2px;
+
+  cursor: pointer;
+
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease,
-    background 0.15s ease,
-    color 0.15s ease;
+    background 0.15s ease;
 }
 
-button:hover {
-  background: #222;
-  color: #D3832B;
+.option-button:hover {
+  background: var(--orange);
+  color: var(--ink);
   transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0 #D3832B;
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
-button:active {
+.option-button:active {
   transform: translate(0, 0);
-  box-shadow: 0 0 0 #D3832B;
+  box-shadow: 0 0 0 var(--ink);
 }
 
-/* LINKS ON INFORMATION PAGES */
+
+/* OPTION TITLE */
+
+.option-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+
+/* OPTION DESCRIPTION */
+
+.option-description {
+  margin-top: 7px;
+
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+
+/* INFORMATION LINKS */
 
 .links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   margin-top: 20px;
 }
 
 .links a {
   display: block;
-  padding: 18px;
-  border: 2px solid #222;
-  border-radius: 4px;
-  background: #D3832B;
-  color: #222;
+
+  padding: 18px 20px;
+
+  border: 3px solid var(--ink);
+  border-radius: 2px;
+
+  background: var(--light-orange);
+  color: var(--ink);
+
   text-decoration: none;
   font-size: 1.1rem;
+  font-weight: 700;
 
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease,
-    background 0.15s ease,
-    color 0.15s ease;
+    background 0.15s ease;
 }
 
 .links a:hover {
-  background: #222;
-  color: #D3832B;
+  background: var(--orange);
   transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0 #D3832B;
+  box-shadow: 6px 6px 0 var(--ink);
 }
+
 
 /* NAVIGATION */
 
 .navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 40px;
+  gap: 12px;
+
+  margin-top: 45px;
   padding-top: 20px;
-  border-top: 2px solid #222;
+
+  border-top: 2px solid var(--ink);
 }
 
 .navigation button {
-  font-size: 0.9rem;
+  font-family: inherit;
+
   padding: 10px 15px;
+
+  background: transparent;
+  color: var(--ink);
+
+  border: 2px solid var(--ink);
+
+  cursor: pointer;
 }
 
-/* ANIMATION */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.navigation button:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
+
+
+/* KEYBOARD ACCESSIBILITY */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 4px solid var(--dark-orange);
+  outline-offset: 4px;
+}
+
 
 /* SMALL SCREENS */
 
@@ -141,11 +203,10 @@ button:active {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
-  button,
-  .links a {
-    font-size: 1rem;
+  .option-button {
+    padding: 18px;
   }
 }
