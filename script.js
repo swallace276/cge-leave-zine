@@ -60,7 +60,7 @@ const nodes = {
     options: [
       {
         text: "Health",
-        description: "Includes mental or physical health, preventative care, or care of family members",
+        description: "Mental or physical health, medical or preventative care, or care of family members",
         next: "health"
       },
       {
@@ -132,24 +132,39 @@ const nodes = {
   },
 
 
-  "health-long": {
-    label: "YOUR OPTIONS",
-    title: "Health-related leave",
-    subtitle: "You need weeks up to months off. Some options are paid, some are unpaid, and some can be used together.",
+"health-long": {
+  label: "YOUR OPTIONS",
 
-    options: [
-      {
-        text: "Donated sick hours",
-        description: "Paid leave donated by another employee.",
-        next: "donated-sick"
-      },
-      {
-        text: "Protected leave",
-        description: "Longer-term leave with certain legal protections.",
-        next: "plo"
-      }
-    ]
-  },
+  title: "Health-related leave",
+
+  subtitle: "You need weeks to months off.",
+
+  body: `
+    <p>
+      You may have more than one option for longer-term leave. Some options
+      can provide pay, while others may provide job protections or other
+      benefits.
+    </p>
+
+    <p>
+      These options are not necessarily either/or. Depending on your
+      circumstances, more than one type of leave may apply.
+    </p>
+  `,
+
+  options: [
+    {
+      text: "Donated sick hours",
+      description: "Additional paid sick leave donated by another employee.",
+      next: "donated-sick"
+    },
+    {
+      text: "Protected leave",
+      description: "Longer-term leave that may include job protections and/or pay.",
+      next: "plo"
+    }
+  ]
+},
 
 
   "other-short": {
@@ -480,6 +495,26 @@ function renderNode() {
     body.innerHTML = node.body;
 
     contentContainer.appendChild(body);
+  }
+
+    // NOTE
+
+  if (node.note) {
+    const note = document.createElement("aside");
+    note.className = "note";
+
+    const noteLabel = document.createElement("p");
+    noteLabel.className = "note-label";
+    noteLabel.textContent = node.note.label;
+
+    const noteText = document.createElement("p");
+    noteText.className = "note-text";
+    noteText.textContent = node.note.text;
+
+    note.appendChild(noteLabel);
+    note.appendChild(noteText);
+
+    contentContainer.appendChild(note);
   }
 
 
