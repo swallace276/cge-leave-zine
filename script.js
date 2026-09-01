@@ -228,9 +228,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Please consult the CBA and other official resources
-      for the information most relevant to your situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `
   },
 
@@ -285,9 +286,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Please consult the CBA and other official resources
-      for the information most relevant to your situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `
   },
 
@@ -324,9 +326,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Please consult official resources for the most
-      current information.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation..
     `
   },
 
@@ -353,9 +356,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Protected leave can be complicated, so please consult
-      official resources about your specific situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `
   },
 
@@ -386,9 +390,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Please consult the CBA and other official resources
-      for the information most relevant to your situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `
   },
 
@@ -416,9 +421,10 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by [YOUR NAME] and is intended to be one helpful
-      resource among many. Please consult official resources for information
-      relevant to your specific situation.
+      This adventure was made by the CGE disability justice and mental health supercaucus
+      and is intended to be one helpful resource among many. 
+      Policies and agreements can change, so please consult official resources 
+      and CGE for help navigating your specific situation.
     `
   }
 };
