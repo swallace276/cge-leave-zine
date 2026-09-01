@@ -154,6 +154,39 @@ h1 {
   margin: 0 0 1.25rem;
 }
 
+/* --------------------------------------------------
+   GOOD TO KNOW NOTES
+-------------------------------------------------- */
+
+.note {
+  max-width: 60ch;
+
+  margin: 2rem 0;
+
+  padding: 18px 20px;
+
+  border-left: 6px solid var(--orange);
+
+  background: var(--light-orange);
+}
+
+.note-label {
+  margin: 0 0 6px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.note-text {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 
 /* --------------------------------------------------
    IN-TEXT LINKS
@@ -328,6 +361,51 @@ h1 {
   color: var(--paper);
 }
 
+/* --------------------------------------------------
+   COVER PAGE
+-------------------------------------------------- */
+
+.cover-page {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover-page h1 {
+  max-width: 8ch;
+
+  font-size: clamp(4.5rem, 14vw, 8rem);
+  line-height: 0.82;
+
+  margin-bottom: 1.5rem;
+
+  letter-spacing: -0.06em;
+}
+
+.cover-page .subtitle {
+  max-width: 48ch;
+
+  font-size: 1.25rem;
+
+  margin-bottom: 3rem;
+}
+
+.cover-page .options {
+  max-width: 360px;
+}
+
+.cover-page .option-button {
+  align-items: center;
+
+  text-align: center;
+}
+
+.cover-page .option-title {
+  width: 100%;
+}
+
 
 /* --------------------------------------------------
    DISCLAIMER
@@ -371,6 +449,10 @@ a:focus-visible {
 
   h1 {
     font-size: 3.2rem;
+  }
+
+  .cover-page h1 {
+  font-size: clamp(4rem, 20vw, 6rem);
   }
 
   .option-button {
