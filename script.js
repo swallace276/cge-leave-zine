@@ -57,9 +57,6 @@ const nodes = {
       <p>
   
       </p>
-      <p>
-        What kind of leave are you looking for?
-      </p>
     `,
   
     options: [
