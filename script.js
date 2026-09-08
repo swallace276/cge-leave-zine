@@ -98,19 +98,21 @@ const nodes = {
 
 
   other: {
-    label: "OTHER TIME OFF OPTIONS",
+    label: "NON-HEALTH-RELATED",
+  
     title: "How much time do you need?",
-    subtitle: "Your options will depend on how much time you need and how formally you want to request this time off.",
-
+  
+    subtitle: "Different options may make sense depending on how long you expect to be away.",
+  
     options: [
       {
-        text: "15 days or fewer",
-        description: "This is generally a more informal option.",
+        text: "A short break",
+        description: "A few days or a relatively short amount of time.",
         next: "other-short"
       },
       {
-        text: "More than 15 days",
-        description: "This could require a more official request.",
+        text: "A longer absence",
+        description: "Weeks or months away from work.",
         next: "other-long"
       }
     ]
@@ -139,42 +141,57 @@ const nodes = {
 
   "health-long": {
     label: "LONGER-TERM OPTIONS",
+  
     title: "What brings you here?",
-    subtitle: "There are several kinds of leave that may apply to longer absences. Your options can overlap, so start with the situation that best describes what you need.",
+  
+    subtitle: "There may be several types of leave available for longer absences. Start with the situation that best describes what you need.",
+  
+    body: `
+      <p>
+        Your options may overlap. Depending on your circumstances, you may be
+        eligible for more than one type of leave or program.
+      </p>
+    `,
+  
+    note: {
+      label: "GOOD TO KNOW",
+      text: "You don't necessarily have to choose just one option. This guide is meant to help you identify things worth looking into."
+    },
+  
     options: [
       {
         text: "My own health",
-        description: "I need time away because of my own health.",
+        description: "I need time away because of my physical or mental health.",
         next: "own-health"
       },
       {
         text: "Family or caregiving",
-        description: "I need to care for a family member.",
+        description: "I need time to care for a family member.",
         next: "family-care"
       },
       {
         text: "Parental leave",
-        description: "Birth, adoption, or fostering.",
+        description: "Birth, adoption, foster placement, or bonding with a new child.",
         next: "parental"
       },
       {
         text: "Pregnancy",
-        description: "Pregnancy-related leave.",
+        description: "Pregnancy-related medical needs or disability.",
         next: "pregnancy"
       },
       {
         text: "Bereavement",
-        description: "Time off after a family member's death.",
+        description: "Time away following the death of a family member.",
         next: "bereavement"
       },
       {
         text: "Safety",
-        description: "Domestic violence, sexual assault, harassment, stalking, or related situations.",
+        description: "Domestic violence, sexual assault, harassment, stalking, or related circumstances.",
         next: "safety"
       },
       {
         text: "I'm not sure",
-        description: "I don't know what category I fall into.",
+        description: "I don't know which category applies to my situation.",
         next: "not-sure"
       }
     ]
@@ -255,36 +272,53 @@ const nodes = {
 
   "own-health": {
     type: "destination",
-    label: "YOUR SITUATION",
-    title: "Your own health",
-    body: `
-      <p>If you need substantial time away from work because of your own
-      physical or mental health, several options may be relevant.</p>
   
-      <p>You may be able to use accrued sick leave, donated sick leave,
-      or protected leave. Oregon's Paid Leave Oregon program may also
-      provide paid leave if you meet its requirements.</p>
-
+    label: "LONGER-TERM OPTIONS",
+  
+    title: "Your own health",
+  
+    body: `
+      <p>
+        If you need substantial time away from your GTA or GRA work because of
+        your own physical or mental health, several options may be relevant.
+      </p>
+  
+      <p>
+        Depending on your circumstances, you may be able to use accrued sick
+        leave, donated sick leave, protected leave under the CBA, or Paid Leave
+        Oregon.
+      </p>
+  
+      <p>
+        Federal protections such as FMLA may also apply in some circumstances.
+      </p>
     `,
+  
     note: {
-      label: "GOOD TO KNOW",
-      text: "These options may overlap. You don't necessarily have to choose only one."
-      },
-    
+      label: "YOU MAY HAVE MORE THAN ONE OPTION",
+      text: "These programs and forms of leave can overlap. Check each relevant option rather than assuming you must choose only one."
+    },
+  
     links: [
       {
-        text: "Read Article 30 — Sick Leave →",
+        text: "CGE CBA — Article 30: Sick Leave →",
         url: "https://www.cge6069.org/members/cba/#A30"
       },
       {
-        text: "Read Article 31 — Protected Leave →",
+        text: "CGE CBA — Article 31: Protected Leave →",
         url: "https://www.cge6069.org/members/cba/#A31"
       },
       {
-        text: "Check Paid Leave Oregon →",
-        url: "https://paidleave.oregon.gov/"
+        text: "Paid Leave Oregon — Employee Overview →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "U.S. Department of Labor — FMLA Employee Guide →",
+        url: "https://www.dol.gov/agencies/whd/fmla/employee-guide"
       }
-    ]
+    ],
+  
+    disclaimer: "Eligibility depends on your circumstances. The CBA and official program websites are the best sources for current requirements."
   },
   
   "sick-hours": {
@@ -335,13 +369,6 @@ const nodes = {
         url: "https://www.cge6069.org/members/cba/#A30"
       }
     ],
-
-    disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
-      and CGE for help navigating your specific situation.
-    `
   },
 
 
@@ -446,6 +473,253 @@ const nodes = {
       Policies and agreements can change, so please consult official resources 
       and CGE for help navigating your specific situation.
     `
+  },
+
+  "family-care": {
+    type: "destination",
+  
+    label: "LONGER-TERM OPTIONS",
+  
+    title: "Family or caregiving",
+  
+    body: `
+      <p>
+        If you need time away from work to care for a family member, several
+        types of leave may be relevant depending on the situation.
+      </p>
+  
+      <p>
+        You may want to look at accrued sick leave, protected leave under the
+        CBA, and Paid Leave Oregon.
+      </p>
+  
+      <p>
+        Different programs may use different definitions of "family member," so
+        it's worth checking the specific rules for each option.
+      </p>
+    `,
+  
+    links: [
+      {
+        text: "CGE CBA — Definition of Family Member →",
+        url: "https://www.cge6069.org/members/cba/#A30:~:text=Definition%20of%20Family%20Member"
+      },
+      {
+        text: "CGE CBA — Article 31: Protected Leave →",
+        url: "https://www.cge6069.org/members/cba/#A31"
+      },
+      {
+        text: "Paid Leave Oregon — Family Leave →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "U.S. Department of Labor — FMLA Employee Guide →",
+        url: "https://www.dol.gov/agencies/whd/fmla/employee-guide"
+      }
+    ],
+  
+    disclaimer: "Definitions and eligibility requirements vary between programs. Check the original source for your specific situation."
+  },
+
+  parental: {
+    type: "destination",
+  
+    label: "LONGER-TERM OPTIONS",
+  
+    title: "Parental leave",
+  
+    body: `
+      <p>
+        If you are preparing for or welcoming a new child through birth,
+        adoption, or foster placement, multiple leave options may be relevant.
+      </p>
+  
+      <p>
+        The CGE CBA includes parental leave within its protected leave
+        provisions. Paid Leave Oregon may also provide paid family leave for
+        bonding with a new child.
+      </p>
+    `,
+  
+    note: {
+      label: "START EARLY IF YOU CAN",
+      text: "Longer-term leave can involve university procedures and external programs, so giving yourself time to explore the options may make the process easier."
+    },
+  
+    links: [
+      {
+        text: "CGE CBA — Article 31: Protected Leave →",
+        url: "https://www.cge6069.org/members/cba/#A31"
+      },
+      {
+        text: "Paid Leave Oregon — Employee Overview →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "U.S. Department of Labor — FMLA Employee Guide →",
+        url: "https://www.dol.gov/agencies/whd/fmla/employee-guide"
+      }
+    ],
+  
+    disclaimer: "Eligibility and notice requirements vary. Consult the CBA, OSU HR, and relevant state or federal programs."
+  },
+
+  pregnancy: {
+    type: "destination",
+  
+    label: "LONGER-TERM OPTIONS",
+  
+    title: "Pregnancy",
+  
+    body: `
+      <p>
+        Pregnancy-related medical needs may qualify for several different forms
+        of leave and job protection.
+      </p>
+  
+      <p>
+        Depending on your situation, you may want to look at sick leave,
+        protected leave under the CBA, Paid Leave Oregon, and Oregon Family
+        Leave Act protections.
+      </p>
+    `,
+  
+    links: [
+      {
+        text: "CGE CBA — Article 30: Sick Leave →",
+        url: "https://www.cge6069.org/members/cba/#A30"
+      },
+      {
+        text: "CGE CBA — Article 31: Protected Leave →",
+        url: "https://www.cge6069.org/members/cba/#A31"
+      },
+      {
+        text: "Paid Leave Oregon →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "Oregon BOLI — Oregon Family Leave Act →",
+        url: "https://www.oregon.gov/boli/workers/Pages/oregon-family-leave.aspx"
+      }
+    ],
+  
+    disclaimer: "Pregnancy-related leave can involve overlapping state, federal, contractual, and university protections."
+  },
+
+  bereavement: {
+    type: "destination",
+  
+    label: "OPTIONS TO LOOK INTO",
+  
+    title: "Bereavement",
+  
+    body: `
+      <p>
+        Time away following the death of a family member may be covered by more
+        than one leave policy.
+      </p>
+  
+      <p>
+        You may want to look at the CBA's sick leave provisions as well as
+        Oregon Family Leave Act protections.
+      </p>
+    `,
+  
+    links: [
+      {
+        text: "CGE CBA — Article 30: Sick Leave →",
+        url: "https://www.cge6069.org/members/cba/#A30"
+      },
+      {
+        text: "Oregon BOLI — Oregon Family Leave Act →",
+        url: "https://www.oregon.gov/boli/workers/Pages/oregon-family-leave.aspx"
+      }
+    ],
+  
+    disclaimer: "Leave eligibility can depend on the circumstances and your relationship to the person who died."
+  },
+
+  safety: {
+    type: "destination",
+  
+    label: "OPTIONS TO LOOK INTO",
+  
+    title: "Safety and safe leave",
+  
+    body: `
+      <p>
+        If you or someone in your family needs time away from work because of
+        domestic violence, sexual assault, harassment, stalking, or another
+        qualifying safety-related situation, there may be protected and paid
+        leave options available.
+      </p>
+  
+      <p>
+        Paid Leave Oregon includes safe leave for qualifying circumstances.
+        The CBA may also provide relevant protections.
+      </p>
+    `,
+  
+    note: {
+      label: "YOU DON'T HAVE TO NAVIGATE THIS ALONE",
+      text: "If you are dealing with an urgent or unsafe situation, consider contacting a trusted advocate or support organization in addition to reviewing leave information."
+    },
+  
+    links: [
+      {
+        text: "Paid Leave Oregon — Employee Overview →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "CGE CBA — Article 30: Sick Leave →",
+        url: "https://www.cge6069.org/members/cba/#A30"
+      },
+      {
+        text: "CGE CBA — Article 31: Protected Leave →",
+        url: "https://www.cge6069.org/members/cba/#A31"
+      }
+    ],
+  
+    disclaimer: "You do not need to use this guide as your only source of support. Eligibility and protections depend on your circumstances."
+  },
+
+  "not-sure": {
+    type: "destination",
+  
+    label: "THAT'S OKAY",
+  
+    title: "I'm not sure what applies to me",
+  
+    body: `
+      <p>
+        Leave policies can overlap, and the names of different programs aren't
+        always intuitive.
+      </p>
+  
+      <p>
+        If you're not sure where to start, look at the CBA's protected leave
+        provisions and the Paid Leave Oregon employee guide. You can also
+        contact CGE for help understanding which options might be worth
+        investigating.
+      </p>
+    `,
+  
+    links: [
+      {
+        text: "CGE — Collective Bargaining Agreement →",
+        url: "https://www.cge6069.org/members/cba/"
+      },
+      {
+        text: "Paid Leave Oregon — Employee Overview →",
+        url: "https://paidleave.oregon.gov/employees/overview.html"
+      },
+      {
+        text: "Paid Leave Oregon — How to Apply →",
+        url: "https://paidleave.oregon.gov/employees/"
+      }
+    ],
+  
+    disclaimer: "This zine is meant to help you identify possibilities, not determine your legal eligibility."
   },
 
 
