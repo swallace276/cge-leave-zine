@@ -259,15 +259,18 @@ const nodes = {
     title: "Your own health",
     body: `
       <p>If you need substantial time away from work because of your own
-      physical or mental health, several forms of leave may be relevant.</p>
+      physical or mental health, several options may be relevant.</p>
   
       <p>You may be able to use accrued sick leave, donated sick leave,
       or protected leave. Oregon's Paid Leave Oregon program may also
       provide paid leave if you meet its requirements.</p>
-  
-      <p>These options can overlap, so you don't necessarily have to
-      choose just one.</p>
+
     `,
+    note: {
+      label: "GOOD TO KNOW",
+      text: "These options may overlap. You don't necessarily have to choose only one."
+      },
+    
     links: [
       {
         text: "Read Article 30 — Sick Leave →",
@@ -483,11 +486,13 @@ let history = [];
 
 const app = document.getElementById("app");
 
-
 function renderNode() {
   const node = nodes[currentNode];
 
   app.innerHTML = "";
+
+
+  // PAGE TYPE
 
   if (node.type === "cover") {
     app.classList.add("cover-page");
@@ -496,7 +501,7 @@ function renderNode() {
   }
 
 
-  // PAGE CONTAINER
+  // CONTENT CONTAINER
 
   let contentContainer = app;
 
@@ -546,26 +551,31 @@ function renderNode() {
     const body = document.createElement("div");
     body.className = "body-text";
 
+    // Allows paragraphs and hyperlinks written in node.body
     body.innerHTML = node.body;
 
     contentContainer.appendChild(body);
   }
 
-    // NOTE
+
+  // NOTE / GOOD TO KNOW
 
   if (node.note) {
     const note = document.createElement("aside");
     note.className = "note";
 
-    const noteLabel = document.createElement("p");
-    noteLabel.className = "note-label";
-    noteLabel.textContent = node.note.label;
+    if (node.note.label) {
+      const noteLabel = document.createElement("p");
+      noteLabel.className = "note-label";
+      noteLabel.textContent = node.note.label;
+
+      note.appendChild(noteLabel);
+    }
 
     const noteText = document.createElement("p");
     noteText.className = "note-text";
     noteText.textContent = node.note.text;
 
-    note.appendChild(noteLabel);
     note.appendChild(noteText);
 
     contentContainer.appendChild(note);
@@ -599,8 +609,12 @@ function renderNode() {
       button.addEventListener("click", () => {
         history.push(currentNode);
         currentNode = option.next;
-
         renderNode();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
 
       optionsContainer.appendChild(button);
@@ -631,6 +645,17 @@ function renderNode() {
   }
 
 
+  // DISCLAIMER
+
+  if (node.disclaimer) {
+    const disclaimer = document.createElement("p");
+    disclaimer.className = "disclaimer";
+    disclaimer.textContent = node.disclaimer;
+
+    contentContainer.appendChild(disclaimer);
+  }
+
+
   // NAVIGATION
 
   if (currentNode !== "start") {
@@ -643,13 +668,16 @@ function renderNode() {
 
       backButton.addEventListener("click", () => {
         currentNode = history.pop();
-
         renderNode();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
 
       navigation.appendChild(backButton);
     }
-
 
     const restartButton = document.createElement("button");
     restartButton.textContent = "↻ Start over";
@@ -657,26 +685,16 @@ function renderNode() {
     restartButton.addEventListener("click", () => {
       currentNode = "start";
       history = [];
-
       renderNode();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
 
     navigation.appendChild(restartButton);
 
     app.appendChild(navigation);
   }
-
-
-  // DISCLAIMER
-
-  if (node.disclaimer) {
-    const disclaimer = document.createElement("footer");
-    disclaimer.className = "disclaimer";
-    disclaimer.textContent = node.disclaimer;
-
-    app.appendChild(disclaimer);
-  }
 }
-
-
-renderNode();
