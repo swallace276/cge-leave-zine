@@ -65,7 +65,7 @@ const nodes = {
     options: [
       {
         text: "Health",
-        description: "I for a family member need care",
+        description: "I or a family member need care",
         next: "health"
       },
       {
@@ -218,8 +218,8 @@ const nodes = {
 
   "other-long": {
     label: "YOU COULD LOOK INTO",
-    title: "Non-health-related leave",
-    subtitle: "More than 15 days.",
+    title: "Taking a longer absence",
+    subtitle: "If you expect to need weeks or months away from work, there may be more formal leave options to explore.",
 
     options: [
       {
@@ -972,3 +972,5 @@ function renderNode() {
     app.appendChild(navigation);
   }
 }
+
+renderNode();
