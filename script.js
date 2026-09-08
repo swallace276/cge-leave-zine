@@ -131,6 +131,11 @@ const nodes = {
         text: "Sick hours",
         description: "Time off recorded through your timesheet.",
         next: "sick-hours"
+      }, 
+      {
+        text: "Donated sick hours",
+        description: "If you need more than you have accrued.",
+        next: "donated-sick"
       }
     ]
   },
@@ -259,9 +264,7 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
+      Please consult official resources 
       and CGE for help navigating your specific situation.
     `
   },
@@ -401,40 +404,7 @@ const nodes = {
     ],
 
     disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
-      and CGE for help navigating your specific situation..
-    `
-  },
-
-
-  plo: {
-    type: "destination",
-
-    label: "PROTECTED LEAVE",
-
-    title: "Protected Leave",
-
-    body: `
-      <p>
-        Including Paid Leave Oregon and other longer-term protected leave
-        options.
-      </p>
-    `,
-
-    links: [
-      {
-        text: "Try OSU HR's protected leave questionnaire →",
-        url: "https://hr.oregonstate.edu/benefits/protected-leave-guidance-employees"
-      }
-    ],
-
-    disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
-      and CGE for help navigating your specific situation.
+      Please consult official resources and CGE for help navigating your specific situation.
     `
   },
 
@@ -460,14 +430,12 @@ const nodes = {
     links: [
       {
         text: "Here's what the CBA says →",
-        url: "https://www.cge6069.org/members/cba/#A30:~:text=and%20their%20supervisor.-,Section%206%20%E2%80%93%20Leave,-Supervisors%20must%20make"
+        url: "https://www.cge6069.org/members/cba/#:~:text=and%20their%20supervisor.-,Section%206%20%E2%80%93%20Leave,-Supervisors%20must%20make"
       }
     ],
 
     disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
+      Please consult official resources 
       and CGE for help navigating your specific situation.
     `
   },
@@ -720,35 +688,7 @@ const nodes = {
   },
 
 
-  extended: {
-    type: "destination",
-
-    label: "LONGER-TERM LEAVE",
-
-    title: "Extended leave",
-
-    body: `
-      <p>
-        This is unpaid leave for when you need to take a break from work and
-        want to be able to come back with protections against retaliation, but
-        don't need to be paid during your leave.
-      </p>
-    `,
-
-    links: [
-      {
-        text: "Here's what the CBA says →",
-        url: "https://www.cge6069.org/members/cba/#Article%2028:~:text=ARTICLE%2027%20%E2%80%93%20STATUTORY%20COMPLIANCE"
-      }
-    ],
-
-    disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
-      and CGE for help navigating your specific situation.
-    `
-  }
+  
 };
 
 
