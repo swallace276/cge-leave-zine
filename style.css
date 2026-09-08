@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+
+/* --------------------------------------------------
+   COLOR SYSTEM
+-------------------------------------------------- */
+
 :root {
   --paper: #f6f1e8;
   --paper-light: #fffaf2;
@@ -16,10 +21,17 @@
   --rule: #b8aea3;
 }
 
+
+/* --------------------------------------------------
+   PAGE
+-------------------------------------------------- */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+
   background: var(--paper);
   color: var(--ink);
+
   margin: 0;
   min-height: 100vh;
 }
@@ -27,6 +39,7 @@ body {
 main {
   max-width: 700px;
   margin: 0 auto;
+
   padding: 40px 20px 60px;
 }
 
@@ -34,50 +47,6 @@ main {
   min-height: 70vh;
 }
 
-/* --------------------------------------------------
-   COVER PAGE
--------------------------------------------------- */
-
-.cover-page {
-  min-height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.cover-page h1 {
-  max-width: 9ch;
-
-  font-size: clamp(4.5rem, 14vw, 8rem);
-  line-height: 0.82;
-
-  margin-bottom: 1.5rem;
-
-  letter-spacing: -0.06em;
-}
-
-.cover-page .subtitle {
-  max-width: 48ch;
-
-  font-size: 1.25rem;
-
-  margin-bottom: 3rem;
-}
-
-.cover-page .options {
-  max-width: 360px;
-}
-
-.cover-page .option-button {
-  align-items: center;
-
-  text-align: center;
-}
-
-.cover-page .option-title {
-  width: 100%;
-}
 
 /* --------------------------------------------------
    LABELS
@@ -88,8 +57,10 @@ main {
 
   font-size: 0.75rem;
   font-weight: 700;
+
   letter-spacing: 0.1em;
   line-height: 1.2;
+
   text-transform: uppercase;
 
   color: var(--muted-ink);
@@ -102,8 +73,11 @@ main {
 
 h1 {
   font-size: clamp(2.8rem, 8vw, 5.5rem);
+
   line-height: 0.9;
+
   margin: 0 0 1rem;
+
   letter-spacing: -0.04em;
 }
 
@@ -113,29 +87,12 @@ h1 {
 -------------------------------------------------- */
 
 .subtitle {
+  max-width: 55ch;
+
+  margin: 0 0 2.5rem;
+
   font-size: 1.2rem;
   line-height: 1.5;
-  margin: 0 0 2.5rem;
-  max-width: 55ch;
-}
-
-
-/* --------------------------------------------------
-   DESTINATION PAGES
--------------------------------------------------- */
-
-.destination-page {
-  padding: clamp(24px, 5vw, 50px);
-
-  background: var(--paper-light);
-
-  border: 3px solid var(--ink);
-
-  box-shadow: 8px 8px 0 var(--orange);
-}
-
-.destination-page h1 {
-  margin-bottom: 1.5rem;
 }
 
 
@@ -152,39 +109,6 @@ h1 {
 
 .body-text p {
   margin: 0 0 1.25rem;
-}
-
-/* --------------------------------------------------
-   GOOD TO KNOW NOTES
--------------------------------------------------- */
-
-.note {
-  max-width: 60ch;
-
-  margin: 2rem 0;
-
-  padding: 18px 20px;
-
-  border-left: 6px solid var(--orange);
-
-  background: var(--light-orange);
-}
-
-.note-label {
-  margin: 0 0 6px;
-
-  font-size: 0.75rem;
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.note-text {
-  margin: 0;
-
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 
@@ -213,6 +137,7 @@ h1 {
 .options {
   display: flex;
   flex-direction: column;
+
   gap: 14px;
 }
 
@@ -253,7 +178,7 @@ h1 {
 .option-button:active {
   transform: translate(0, 0);
 
-  box-shadow: 0 0 0 var(--ink);
+  box-shadow: none;
 }
 
 
@@ -264,6 +189,7 @@ h1 {
 .option-title {
   font-size: 1.35rem;
   font-weight: 700;
+
   line-height: 1.1;
 }
 
@@ -280,6 +206,61 @@ h1 {
   font-weight: 400;
 
   line-height: 1.4;
+
+  color: var(--muted-ink);
+}
+
+
+/* --------------------------------------------------
+   DESTINATION PAGES
+-------------------------------------------------- */
+
+.destination-page {
+  padding: clamp(24px, 5vw, 50px);
+
+  background: var(--paper-light);
+
+  border: 3px solid var(--ink);
+
+  box-shadow: 8px 8px 0 var(--orange);
+}
+
+.destination-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+
+/* --------------------------------------------------
+   GOOD TO KNOW / NOTES
+-------------------------------------------------- */
+
+.note {
+  max-width: 60ch;
+
+  margin: 2rem 0;
+
+  padding: 18px 20px;
+
+  border-left: 6px solid var(--orange);
+
+  background: var(--light-orange);
+}
+
+.note-label {
+  margin: 0 0 6px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.note-text {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 
@@ -328,6 +309,25 @@ h1 {
 
 
 /* --------------------------------------------------
+   DISCLAIMER
+-------------------------------------------------- */
+
+.disclaimer {
+  max-width: 65ch;
+
+  margin-top: 60px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--rule);
+
+  font-size: 0.78rem;
+  line-height: 1.55;
+
+  color: var(--muted-ink);
+}
+
+
+/* --------------------------------------------------
    NAVIGATION
 -------------------------------------------------- */
 
@@ -344,9 +344,9 @@ h1 {
 }
 
 .navigation button {
-  font-family: inherit;
-
   padding: 10px 15px;
+
+  font-family: inherit;
 
   background: transparent;
   color: var(--ink);
@@ -354,12 +354,17 @@ h1 {
   border: 2px solid var(--ink);
 
   cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .navigation button:hover {
   background: var(--ink);
   color: var(--paper);
 }
+
 
 /* --------------------------------------------------
    COVER PAGE
@@ -370,6 +375,7 @@ h1 {
 
   display: flex;
   flex-direction: column;
+
   justify-content: center;
 }
 
@@ -377,6 +383,7 @@ h1 {
   max-width: 8ch;
 
   font-size: clamp(4.5rem, 14vw, 8rem);
+
   line-height: 0.82;
 
   margin-bottom: 1.5rem;
@@ -406,23 +413,10 @@ h1 {
   width: 100%;
 }
 
+.cover-page .disclaimer {
+  margin-top: auto;
 
-/* --------------------------------------------------
-   DISCLAIMER
--------------------------------------------------- */
-
-.disclaimer {
-  max-width: 65ch;
-
-  margin-top: 60px;
-  padding-top: 18px;
-
-  border-top: 1px solid var(--rule);
-
-  font-size: 0.78rem;
-  line-height: 1.55;
-
-  color: var(--muted-ink);
+  padding-top: 3rem;
 }
 
 
@@ -434,6 +428,21 @@ button:focus-visible,
 a:focus-visible {
   outline: 4px solid var(--dark-orange);
   outline-offset: 4px;
+}
+
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 
@@ -451,10 +460,6 @@ a:focus-visible {
     font-size: 3.2rem;
   }
 
-  .cover-page h1 {
-  font-size: clamp(4rem, 20vw, 6rem);
-  }
-
   .option-button {
     padding: 18px;
   }
@@ -463,5 +468,9 @@ a:focus-visible {
     padding: 24px 20px;
 
     box-shadow: 5px 5px 0 var(--orange);
+  }
+
+  .cover-page h1 {
+    font-size: clamp(4rem, 20vw, 6rem);
   }
 }
