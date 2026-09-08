@@ -4,13 +4,10 @@ const nodes = {
     
     title: "Need time off?",
     
-    subtitle: 'A choose-your-own-adventure "zine" for navigating what kind of leave you can take as a Coalition of Graduate Employees (CGE, or "union") member, GTA, or GRA at Oregon State University.',
+    subtitle: 'A choose-your-own-adventure "zine" for navigating what kind of leave you can take as a Coalition of Graduate Employees (CGE) member, GTA, or GRA at Oregon State University.',
 
     disclaimer: `
-      This adventure was made by the CGE disability justice and mental health supercaucus
-      and is intended to be one helpful resource among many. 
-      Policies and agreements can change, so please consult official resources 
-      and CGE for help navigating your specific situation.
+      This guide is for general information and is not a substitute for the Collective Bargaining Agreement (CBA), OSU policies, or advice from CGE.
     `,
 
     options: [
@@ -23,22 +20,23 @@ const nodes = {
 
 
   reason: {
-    label: "QUESTION 01",
+    label: "START HERE",
     title: "Reason for leave?",
-    subtitle: "What kind of leave are you looking for?",
+    subtitle: "Your options vary based on why you need time away from your work.",
+    note: {
+      label: "GOOD TO KNOW",
+      text: "You may have more than one option. These aren't necessarily either/or."
+    },
 
     body: `
       <p>
-        Your options vary based on why you need time away from your work.
-      </p>
-  
-      <p>
+        Note: 
         <a
           href="https://www.cge6069.org/members/cba/#A30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Health-related leave
+          health-related leave
         </a>
         can include more than being physically sick. Under the CBA, sick leave
         may apply to physical or mental illness, injury, or health conditions;
@@ -55,17 +53,24 @@ const nodes = {
           qualifying family member
         </a>.
       </p>
+
+      <p>
+  
+      </p>
+      <p>
+        What kind of leave are you looking for?
+      </p>
     `,
   
     options: [
       {
         text: "Health",
-        description: "Mental or physical health, medical or preventative care, or care of family members",
+        description: "I for a family member need care",
         next: "health"
       },
       {
-        text: "Something else",
-        description: "Personal circumstances, vacation, or another reason.",
+        text: "Other",
+        description: "For non-health-related reasons.",
         next: "other"
       }
     ]
@@ -73,7 +78,7 @@ const nodes = {
 
 
   health: {
-    label: "QUESTION 02",
+    label: "HEALTH-RELATED OPTIONS",
     title: "How much time do you need?",
     subtitle: "You have several options for health-related leave. Your options vary based on how much time you need to take off and how formally you want to request time off.",
 
@@ -93,7 +98,7 @@ const nodes = {
 
 
   other: {
-    label: "QUESTION 02",
+    label: "OTHER TIME OFF OPTIONS",
     title: "How much time do you need?",
     subtitle: "Your options will depend on how much time you need and how formally you want to request this time off.",
 
@@ -132,50 +137,62 @@ const nodes = {
   },
 
 
-"health-long": {
-  label: "YOUR OPTIONS",
-
-  title: "Health-related leave",
-
-  subtitle: "You need weeks to months off.",
-
-  body: `
-    <p>
-      You may have more than one option for longer-term leave. Some options
-      can provide pay, while others may provide job protections or other
-      benefits.
-    </p>
-
-    <p>
-      These options are not necessarily either/or. Depending on your
-      circumstances, more than one type of leave may apply.
-    </p>
-  `,
-
-  options: [
-    {
-      text: "Donated sick hours",
-      description: "Additional paid sick leave donated by another employee.",
-      next: "donated-sick"
-    },
-    {
-      text: "Protected leave",
-      description: "Longer-term leave that may include job protections and/or pay.",
-      next: "plo"
-    }
-  ]
-},
+  "health-long": {
+    label: "LONGER-TERM OPTIONS",
+    title: "What brings you here?",
+    subtitle: "There are several kinds of leave that may apply to longer absences. Your options can overlap, so start with the situation that best describes what you need.",
+    options: [
+      {
+        text: "My own health",
+        description: "I need time away because of my own health.",
+        next: "own-health"
+      },
+      {
+        text: "Family or caregiving",
+        description: "I need to care for a family member.",
+        next: "family-care"
+      },
+      {
+        text: "Parental leave",
+        description: "Birth, adoption, or fostering.",
+        next: "parental"
+      },
+      {
+        text: "Pregnancy",
+        description: "Pregnancy-related leave.",
+        next: "pregnancy"
+      },
+      {
+        text: "Bereavement",
+        description: "Time off after a family member's death.",
+        next: "bereavement"
+      },
+      {
+        text: "Safety",
+        description: "Domestic violence, sexual assault, harassment, stalking, or related situations.",
+        next: "safety"
+      },
+      {
+        text: "I'm not sure",
+        description: "I don't know what category I fall into.",
+        next: "not-sure"
+      }
+    ]
+  },
 
 
   "other-short": {
-    label: "YOUR OPTIONS",
-    title: "Non-health-related leave",
-    subtitle: "15 days or fewer.",
-
+    label: "ONE POSSIBLE OPTION",
+    title: "Taking some time off",
+    subtitle: "If you need a relatively short break from work, vacation may be the simplest option to look into.",
+    note: {
+      label: "GOOD TO KNOW",
+      text: "Vacation is different from sick leave and protected leave. You generally don't record vacation days on your timesheet, but you'll want to coordinate the timing with your supervisor."
+    },
     options: [
       {
         text: "Vacation days",
-        description: "Paid time away from work.",
+        description: "A relatively small amount of time off.",
         next: "vacation"
       }
     ]
@@ -236,6 +253,37 @@ const nodes = {
   },
 
 
+  "own-health": {
+    type: "destination",
+    label: "YOUR SITUATION",
+    title: "Your own health",
+    body: `
+      <p>If you need substantial time away from work because of your own
+      physical or mental health, several forms of leave may be relevant.</p>
+  
+      <p>You may be able to use accrued sick leave, donated sick leave,
+      or protected leave. Oregon's Paid Leave Oregon program may also
+      provide paid leave if you meet its requirements.</p>
+  
+      <p>These options can overlap, so you don't necessarily have to
+      choose just one.</p>
+    `,
+    links: [
+      {
+        text: "Read Article 30 — Sick Leave →",
+        url: "https://www.cge6069.org/members/cba/#A30"
+      },
+      {
+        text: "Read Article 31 — Protected Leave →",
+        url: "https://www.cge6069.org/members/cba/#A31"
+      },
+      {
+        text: "Check Paid Leave Oregon →",
+        url: "https://paidleave.oregon.gov/"
+      }
+    ]
+  },
+  
   "sick-hours": {
     type: "destination",
 
