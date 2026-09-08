@@ -134,7 +134,7 @@ const nodes = {
       }, 
       {
         text: "Donated sick hours",
-        description: "If you need more than you have accrued.",
+        description: "If you need more sick hours than you have accrued.",
         next: "donated-sick"
       }
     ]
